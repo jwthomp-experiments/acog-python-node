@@ -1,10 +1,22 @@
+PY=./venv/bin/python3
+
 usage:
 	@echo "Usage:"
 	@echo "make install:        Install deps"
 
 install: export PIPENV_VENV_IN_PROJECT=1
-install: 
-	pipenv --python 3.9 install --dev
+install:
+	virtualenv .venv
+	.venv/bin/pip3 install -r requirements.txt
 
+
+run:
+	${PY} main.py
+
+shell: source ./venv/bin/activate
 shell:
-	pipenv run bash
+	bash
+
+clean:
+	rm -rf .venv
+	

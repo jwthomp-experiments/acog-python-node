@@ -1,0 +1,4 @@
+.venv
+
+# Ignore src folder that gets created for pyrlang and pyrlang-term github dependencies
+src
